@@ -1,0 +1,11 @@
+:HL["/_next/static/chunks/0032j3u5~abtz.css","style"]
+:HL["/_next/static/media/0c8f209abc35ee02-s.p.03rqv30url-~q.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/23b7a97ae3b5c134-s.p.0o14nraug8u5s.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/60ec66547305f91a-s.p.00ahgohlisko0.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/99e609270109b47d-s.p.16-z~2sp29ex6.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/a46a75cfd765634f-s.p.05w.dojgtyxj~.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/a7e15459c1805da0-s.p.15mmg7gamto4l.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/cb74272c1a4b1482-s.p.0hx--h4h8.no_.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/fabcf92ba1ccea36-s.p.0lwj123ije5i..woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/fad69795a077455b-s.p.08-a0qexde~kr.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"(public)","param":null,"prefetchHints":0,"slots":{"children":{"name":"showcase","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"nomad-travel-app","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"yjsysX70h9KXoCpyxbLEw"}

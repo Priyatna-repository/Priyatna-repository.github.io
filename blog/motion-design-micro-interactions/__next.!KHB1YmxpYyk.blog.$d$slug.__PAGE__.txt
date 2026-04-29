@@ -1,0 +1,26 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0tqh9eo.kmft1.js","/_next/static/chunks/15ika4zy8_z34.js"],""]
+4:I[97367,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+3:T520,
+<h2>Mengapa Motion Matters?</h2>
+<p>Di dunia yang penuh dengan interface statis, motion design yang tepat bisa membuat perbedaan antara produk yang terasa "hidup" dan yang terasa datar. Tapi motion yang berlebihan justru merusak experience.</p>
+
+<h2>Prinsip Motion Design yang Baik</h2>
+<p>Ada empat prinsip utama yang saya pegang ketika merancang animasi:</p>
+<ul>
+<li><strong>Purposeful:</strong> Setiap animasi harus punya alasan. Apa yang ingin dikomunikasikan?</li>
+<li><strong>Fast:</strong> Animasi UI harus cepat — 200-400ms. Lebih dari itu terasa lambat.</li>
+<li><strong>Natural:</strong> Gunakan easing yang mengikuti fisika nyata, bukan linear.</li>
+<li><strong>Consistent:</strong> Bahasa motion harus konsisten di seluruh produk.</li>
+</ul>
+
+<h2>Spring Physics</h2>
+<p>Spring physics adalah cara terbaik untuk membuat animasi terasa natural. Alih-alih mendefinisikan durasi, kita mendefinisikan stiffness, damping, dan mass. Hasilnya: animasi yang merespons konteks.</p>
+
+<blockquote>The best animation is the one the user doesn't notice — they only notice when it's missing.</blockquote>
+
+<h2>Tools dan Implementasi</h2>
+<p>Untuk web, Framer Motion adalah pilihan terbaik. Untuk mobile, Reanimated 3 jika React Native, atau Lottie untuk animasi kompleks yang dibuat di After Effects.</p>
+    0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"blog-detail","children":[["$","div",null,{"className":"bd-crumb","children":[["$","$L2",null,{"href":"/blog","className":"bd-crumb-link","children":"Blog"}],["$","span",null,{"className":"bd-crumb-sep","children":"›"}],["$","span",null,{"children":"Motion Design"}]]}],["$","div",null,{"className":"bd-header","children":[["$","div",null,{"className":"bd-meta","children":[["$","span",null,{"children":"February 20, 2026"}],["$","span",null,{"children":"·"}],["$","span",null,{"children":[5," min read"]}]]}],["$","h1",null,{"className":"bd-title","children":"Motion Design: Dari Micro-Interactions ke Macro-Animations"}],["$","div",null,{"className":"bd-tags","children":[["$","span","Motion Design",{"className":"bd-tag","children":"Motion Design"}],["$","span","Animation",{"className":"bd-tag","children":"Animation"}],["$","span","Framer Motion",{"className":"bd-tag","children":"Framer Motion"}]]}]]}],["$","article",null,{"className":"bd-body","dangerouslySetInnerHTML":{"__html":"$3"}}],["$","div",null,{"className":"bd-footer","children":[["$","$L2",null,{"href":"/blog","className":"bd-back","children":"← Back to Blog"}],["$","div",null,{"className":"bd-related","children":[["$","div",null,{"className":"bd-related-label","children":"ALSO READ"}],["$","div",null,{"className":"bd-related-list","children":[["$","$L2","post-1",{"href":"/blog/membangun-design-system-scalable","className":"bd-related-card","children":[["$","div",null,{"className":"bdrc-title","children":"Membangun Design System yang Scalable"}],["$","div",null,{"className":"bdrc-date","children":"Mar 2026"}]]}],["$","$L2","post-3",{"href":"/blog/tipografi-sebagai-fondasi-visual","className":"bd-related-card","children":[["$","div",null,{"className":"bdrc-title","children":"Tipografi sebagai Fondasi Visual Identity"}],["$","div",null,{"className":"bdrc-date","children":"Jan 2026"}]]}]]}]]}]]}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/15ika4zy8_z34.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"yjsysX70h9KXoCpyxbLEw"}
+6:null

@@ -1,0 +1,28 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0tqh9eo.kmft1.js","/_next/static/chunks/15ika4zy8_z34.js"],""]
+4:I[97367,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+3:T602,
+<h2>Apa itu Design System?</h2>
+<p>Design system adalah kumpulan aturan, komponen, dan guideline yang menjadi "satu sumber kebenaran" untuk seluruh produk digital. Ini bukan hanya tentang membuat tombol yang konsisten — ini tentang membangun shared language antara designer dan developer.</p>
+
+<h2>Mengapa Scalability Penting?</h2>
+<p>Design system yang tidak dirancang untuk scale akan menjadi bottleneck. Tim akan mulai membuat exception, komponen duplikat muncul, dan inkonsistensi menyebar. Hasilnya: user experience yang terfragmentasi.</p>
+
+<h2>Prinsip Utama</h2>
+<p>Tiga prinsip yang harus ada dalam design system yang scalable:</p>
+<ul>
+<li><strong>Token-based:</strong> Semua nilai (warna, spacing, typography) harus jadi token, bukan nilai hardcode.</li>
+<li><strong>Composable:</strong> Komponen harus bisa dikombinasikan tanpa menulis CSS baru.</li>
+<li><strong>Documented:</strong> Setiap keputusan desain harus terdokumentasi beserta alasannya.</li>
+</ul>
+
+<h2>Implementasi Praktis</h2>
+<p>Mulai dari yang kecil. Tidak perlu langsung membangun 200 komponen. Identifikasi komponen yang paling sering digunakan, bangun dengan benar, dan iterasi dari sana.</p>
+
+<blockquote>Design system yang baik dimulai dari masalah nyata, bukan dari ambisi arsitektur.</blockquote>
+
+<h2>Kesimpulan</h2>
+<p>Investasi dalam design system adalah investasi jangka panjang. Return-nya tidak langsung terlihat, tapi setelah 6-12 bulan, perbedaannya dramatis: development speed meningkat, bug visual berkurang, dan konsistensi terjaga.</p>
+    0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"blog-detail","children":[["$","div",null,{"className":"bd-crumb","children":[["$","$L2",null,{"href":"/blog","className":"bd-crumb-link","children":"Blog"}],["$","span",null,{"className":"bd-crumb-sep","children":"›"}],["$","span",null,{"children":"Design System"}]]}],["$","div",null,{"className":"bd-header","children":[["$","div",null,{"className":"bd-meta","children":[["$","span",null,{"children":"March 15, 2026"}],["$","span",null,{"children":"·"}],["$","span",null,{"children":[6," min read"]}]]}],["$","h1",null,{"className":"bd-title","children":"Membangun Design System yang Scalable"}],["$","div",null,{"className":"bd-tags","children":[["$","span","Design System",{"className":"bd-tag","children":"Design System"}],["$","span","UI/UX",{"className":"bd-tag","children":"UI/UX"}],["$","span","Figma",{"className":"bd-tag","children":"Figma"}]]}]]}],["$","article",null,{"className":"bd-body","dangerouslySetInnerHTML":{"__html":"$3"}}],["$","div",null,{"className":"bd-footer","children":[["$","$L2",null,{"href":"/blog","className":"bd-back","children":"← Back to Blog"}],["$","div",null,{"className":"bd-related","children":[["$","div",null,{"className":"bd-related-label","children":"ALSO READ"}],["$","div",null,{"className":"bd-related-list","children":[["$","$L2","post-2",{"href":"/blog/motion-design-micro-interactions","className":"bd-related-card","children":[["$","div",null,{"className":"bdrc-title","children":"Motion Design: Dari Micro-Interactions ke Macro-Animations"}],["$","div",null,{"className":"bdrc-date","children":"Feb 2026"}]]}],["$","$L2","post-3",{"href":"/blog/tipografi-sebagai-fondasi-visual","className":"bd-related-card","children":[["$","div",null,{"className":"bdrc-title","children":"Tipografi sebagai Fondasi Visual Identity"}],["$","div",null,{"className":"bdrc-date","children":"Jan 2026"}]]}]]}]]}]]}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/15ika4zy8_z34.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"yjsysX70h9KXoCpyxbLEw"}
+6:null

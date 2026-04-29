@@ -1,0 +1,26 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0tqh9eo.kmft1.js","/_next/static/chunks/15ika4zy8_z34.js"],""]
+4:I[97367,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+3:T4e0,
+<h2>Typeface Adalah Suara Brand</h2>
+<p>Jika warna adalah emosi brand, maka tipografi adalah suaranya. Typeface yang dipilih dengan benar akan berbicara bahkan sebelum user membaca satu kata pun.</p>
+
+<h2>Memilih Typeface yang Tepat</h2>
+<p>Beberapa pertanyaan yang harus dijawab sebelum memilih typeface:</p>
+<ul>
+<li>Apa personality brand yang ingin dikomunikasikan?</li>
+<li>Di media apa typeface akan digunakan? (screen, print, kedua-duanya)</li>
+<li>Apakah perlu mendukung multiple languages?</li>
+<li>Apa budget lisensi yang tersedia?</li>
+</ul>
+
+<h2>Variable Fonts: The Future</h2>
+<p>Variable fonts adalah revolusi tipografi. Satu file font bisa memiliki ratusan variasi weight, width, dan optical size. Ini menghemat bandwidth, memberikan kontrol presisi, dan memungkinkan animasi tipografi yang tidak mungkin sebelumnya.</p>
+
+<blockquote>Good typography is invisible. Great typography makes the content feel inevitable.</blockquote>
+
+<h2>Optical Sizing</h2>
+<p>Optical sizing adalah teknik di mana bentuk huruf berubah sesuai ukurannya. Huruf kecil perlu counter yang lebih terbuka, stroke yang lebih tebal, dan x-height yang lebih tinggi dibanding huruf besar. Variable fonts yang support optical sizing otomatis menangani ini.</p>
+    0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"blog-detail","children":[["$","div",null,{"className":"bd-crumb","children":[["$","$L2",null,{"href":"/blog","className":"bd-crumb-link","children":"Blog"}],["$","span",null,{"className":"bd-crumb-sep","children":"›"}],["$","span",null,{"children":"Typography"}]]}],["$","div",null,{"className":"bd-header","children":[["$","div",null,{"className":"bd-meta","children":[["$","span",null,{"children":"January 28, 2026"}],["$","span",null,{"children":"·"}],["$","span",null,{"children":[7," min read"]}]]}],["$","h1",null,{"className":"bd-title","children":"Tipografi sebagai Fondasi Visual Identity"}],["$","div",null,{"className":"bd-tags","children":[["$","span","Typography",{"className":"bd-tag","children":"Typography"}],["$","span","Brand Identity",{"className":"bd-tag","children":"Brand Identity"}],["$","span","Variable Fonts",{"className":"bd-tag","children":"Variable Fonts"}]]}]]}],["$","article",null,{"className":"bd-body","dangerouslySetInnerHTML":{"__html":"$3"}}],["$","div",null,{"className":"bd-footer","children":[["$","$L2",null,{"href":"/blog","className":"bd-back","children":"← Back to Blog"}],["$","div",null,{"className":"bd-related","children":[["$","div",null,{"className":"bd-related-label","children":"ALSO READ"}],["$","div",null,{"className":"bd-related-list","children":[["$","$L2","post-1",{"href":"/blog/membangun-design-system-scalable","className":"bd-related-card","children":[["$","div",null,{"className":"bdrc-title","children":"Membangun Design System yang Scalable"}],["$","div",null,{"className":"bdrc-date","children":"Mar 2026"}]]}],["$","$L2","post-2",{"href":"/blog/motion-design-micro-interactions","className":"bd-related-card","children":[["$","div",null,{"className":"bdrc-title","children":"Motion Design: Dari Micro-Interactions ke Macro-Animations"}],["$","div",null,{"className":"bdrc-date","children":"Feb 2026"}]]}]]}]]}]]}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/15ika4zy8_z34.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"yjsysX70h9KXoCpyxbLEw"}
+6:null
