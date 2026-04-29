@@ -1,4 +1,41 @@
+/* Google Fonts — CDN import must precede all other rules */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;0,700;1,400&family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&display=swap');
+
+/* ─── TAILWIND CSS v4 ─────────────────────────────────────────────────────── */
+@import "tailwindcss";
+
+/* ─── DESIGN TOKENS ────────────────────────────────────────────────────────── */
+/* @theme membuat token ini tersedia sebagai Tailwind utility classes:           */
+/*   bg-ink, text-paper, border-accent, dll.                                    */
+/* CSS variables di :root tetap dipertahankan untuk backward compat.            */
+@theme {
+  /* Colors */
+  --color-ink:      #0a0a0a;
+  --color-paper:    #f5f2ec;
+  --color-paper-2:  #ede9e0;
+  --color-paper-3:  #e4dfd3;
+  --color-accent:   #ff3b00;
+  --color-accent-2: #0047ff;
+  --color-accent-3: #00c853;
+  --color-accent-4: #ffd600;
+  --color-muted:    #7a7060;
+  --color-muted-2:  #b0a898;
+
+  /* Fonts */
+  --font-mono:    'IBM Plex Mono', monospace;
+  --font-display: 'Bebas Neue', cursive;
+  --font-serif:   'DM Serif Display', serif;
+
+  /* Animations */
+  --animate-ticker:    ticker-run 30s linear infinite;
+  --animate-slide-up:  slideUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+  --animate-wipe-in:   wipeIn 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+  --animate-fade-slide: fadeSlide 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+  --animate-card-in:   cardIn 0.4s cubic-bezier(0.23, 1, 0.32, 1) both;
+  --animate-fab-in:    fabIn 0.8s 1.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+  --animate-modal-in:  modalIn 0.35s cubic-bezier(0.23, 1, 0.32, 1) both;
+  --animate-pulse:     pulse 1.5s ease-in-out infinite;
+}
 
 *,
 *::before,
@@ -2379,3 +2416,33 @@ body::after {
     padding: 24px 48px;
     outline: none;
 }
+
+/* ─── CUSTOM CURSOR HOVER STATES ─────────────────────────────────────────── */
+/* Menggunakan :has() — tidak bisa dilakukan dengan Tailwind classes           */
+body:has(a:hover) .cursor-dot,
+body:has(button:hover) .cursor-dot {
+    width: 20px;
+    height: 20px;
+    background: var(--accent2);
+    transition: width 0.15s ease, height 0.15s ease, background 0.15s ease;
+}
+
+body:has(a:hover) .cursor-ring,
+body:has(button:hover) .cursor-ring {
+    width: 60px;
+    height: 60px;
+    opacity: 0.15;
+    transition: width 0.15s ease, height 0.15s ease;
+}
+
+/* ─── SCROLLBAR ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--paper); }
+::-webkit-scrollbar-thumb { background: var(--muted2); }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+/* ─── SELECTION ──────────────────────────────────────────────────────────── */
+::selection { background: var(--accent); color: var(--paper); }
+
+/* ─── FOCUS VISIBLE ──────────────────────────────────────────────────────── */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

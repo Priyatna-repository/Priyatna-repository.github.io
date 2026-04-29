@@ -1,14 +1,16 @@
 "use client"
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import Image from 'next/image';
-import { useSearchStore } from '@/store/searchStore';
-import { SUGGESTIONS } from '@/data';
+import { useSearchStore } from '@/store/searchStore'
+import { useUIStore } from '@/store/uiStore'
+import { SUGGESTIONS } from '@/data'
 
 export default function HomeView({ onCounterReady }: { onCounterReady: boolean }) {
   const [localInput, setLocalInput] = useState('');
   const [isFocused, setIsFocused] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
-  const { runSearch, openLabs, history } = useSearchStore();
+  const { runSearch, history } = useSearchStore()
+  const openLabs = useUIStore((s) => s.openLabs)
   const wrapRef = useRef<HTMLDivElement>(null);
 
   const filteredSuggestions = useMemo(() => {
@@ -78,7 +80,7 @@ export default function HomeView({ onCounterReady }: { onCounterReady: boolean }
       {/* --- BACKGROUND IMAGE LAYER --- */}
       <div className="home-bg-container">
         <Image
-          src="/home.jpg" 
+          src="/assets/images/hero-background.jpg"
           alt="Background"
           fill
           priority

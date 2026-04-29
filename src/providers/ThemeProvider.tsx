@@ -1,16 +1,13 @@
-'use client';
-
-import { useEffect } from 'react';
-import { useSearchStore } from '@/store/searchStore';
+'use client'
+import { useEffect } from 'react'
+import { useUIStore } from '@/store/uiStore'
 
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const theme = useSearchStore((s) => s.theme);
+  const theme = useUIStore((s) => s.theme)
 
   useEffect(() => {
-    const root = document.documentElement;
-    root.setAttribute('data-theme', theme);
-  }, [theme]);
+    document.documentElement.setAttribute('data-theme', theme)
+  }, [theme])
 
-  return <>{children}</>;
+  return <>{children}</>
 }
-

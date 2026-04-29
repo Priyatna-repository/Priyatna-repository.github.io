@@ -43,7 +43,7 @@ export default function PageClient() {
         {isResultsView && <ResultsView />}
       </div>
       <ThemeToggle />
-      {/* <LabsFab /> */}
+      <LabsFab />
       <LabsOverlay />
     </ThemeProvider>
   );

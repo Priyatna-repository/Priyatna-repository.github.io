@@ -1,18 +1,16 @@
-"use client"
-import { useSearchStore } from '@/store/searchStore';
+'use client'
+import { useUIStore } from '@/store/uiStore'
 
 export default function ThemeToggle() {
-  const { theme, toggleTheme } = useSearchStore();
+  const { theme, toggleTheme } = useUIStore()
 
   return (
     <div className="theme-toggle-wrap">
       <button className="theme-btn" onClick={toggleTheme}>
         <span className="theme-icon">{theme === 'light' ? '☼' : '☾'}</span>
-        <span className="theme-text">
-            {theme === 'light' ? 'SWITCH_DARK' : 'SWITCH_LIGHT'}
-        </span>
+        <span className="theme-text">{theme === 'light' ? 'SWITCH_DARK' : 'SWITCH_LIGHT'}</span>
       </button>
-      
+
       <style jsx>{`
         .theme-toggle-wrap {
           position: fixed;
@@ -31,7 +29,7 @@ export default function ThemeToggle() {
           display: flex;
           align-items: center;
           gap: 10px;
-          cursor: none; /* Agar tetap pakai custom cursor */
+          cursor: none;
           transition: all 0.3s var(--transition);
         }
         .theme-btn:hover {
@@ -39,28 +37,29 @@ export default function ThemeToggle() {
           border-color: var(--accent);
         }
         .theme-icon {
-  font-size: 14px;
-  transition: transform 0.4s ease;
-}
-
-.theme-btn:active .theme-icon {
-  transform: rotate(180deg);
-}
+          font-size: 14px;
+          transition: transform 0.4s ease;
+        }
+        .theme-btn:active .theme-icon {
+          transform: rotate(180deg);
+        }
         @media (max-width: 600px) {
           .theme-text {
-  opacity: 0;
-  transform: translateX(-6px);
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.theme-btn:hover .theme-text {
-  opacity: 1;
-  transform: translateX(0);
-}
-          .theme-toggle-wrap { bottom: 20px; left: 20px; }
+            opacity: 0;
+            transform: translateX(-6px);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+          }
+          .theme-btn:hover .theme-text {
+            opacity: 1;
+            transform: translateX(0);
+          }
+          .theme-toggle-wrap {
+            bottom: 20px;
+            left: 20px;
+          }
         }
       `}</style>
     </div>
-  );
+  )
 }
