@@ -36,16 +36,16 @@ export default function ResultsView() {
           </div>
         </TabsContent>
         <TabsContent value="projects">
-          <div className="results-layout">Hanya menampilkan Proyek...</div>
+          <div className="results-layout">Hanya menampilkan Proyek...berdasarkan pencarian</div>
         </TabsContent>
         <TabsContent value="labs">
-          <div className="results-layout">Hanya menampilkan Lab Tools...</div>
+          <div className="results-layout">Hanya menampilkan Lab Tools...berdasarkan pencarian</div>
         </TabsContent>
         <TabsContent value="motion">
-          <div className="results-layout">Hanya menampilkan Motion...</div>
+          <div className="results-layout">Hanya menampilkan Motion...berdasarkan pencarian</div>
         </TabsContent>
         <TabsContent value="branding">
-          <div className="results-layout">Hanya menampilkan Branding...</div>
+          <div className="results-layout">Hanya menampilkan Branding...berdasarkan pencarian</div>
         </TabsContent>
       </Tabs>
     </div>

@@ -91,86 +91,100 @@ export default function HomeView({ onCounterReady }: { onCounterReady: boolean }
       </div>
 
       {/* --- CONTENT LAYER --- */}
+      {/* <div className="home-hero">
+        <div className="home-logo-row">
+          <span className="hl-word hl-w1">PRI</span>
+          <span className="hl-word hl-w2">YATNA</span>
+          <span className="hl-dot">.</span>
+        </div> */}
       <div className="home-hero">
+        {/* Eyebrow Label */}
+        <div className="explore-tag">
+          <span className="et-word">EXPLORE</span>
+          <span className="et-word et-italic">The</span>
+          <span className="et-word">ARCHIVE</span>
+        </div>
+
+        {/* Main Logo */}
         <div className="home-logo-row">
           <span className="hl-word hl-w1">PRI</span>
           <span className="hl-word hl-w2">YATNA</span>
           <span className="hl-dot">.</span>
         </div>
 
-        {/* Search Box */}
-        <div className="search-center-wrap" ref={wrapRef}>
-          <div className="search-input-anchor">
-            <div className="search-box">
-              <input
-                className="search-input"
-                placeholder="Search projects, labs, brand systems..."
-                value={localInput}
-                onChange={(e) => {
-                  setLocalInput(e.target.value);
-                  setActiveIndex(-1);
-                }}
-                onFocus={() => setIsFocused(true)}
-                onKeyDown={handleKeyDown}
-              />
-              <button className="search-submit" onClick={() => runSearch(localInput)}>SEARCH</button>
-            </div>
+      {/* Search Box */}
+      <div className="search-center-wrap" ref={wrapRef}>
+        <div className="search-input-anchor">
+          <div className="search-box">
+            <input
+              className="search-input"
+              placeholder="Explore the Archive..."
+              value={localInput}
+              onChange={(e) => {
+                setLocalInput(e.target.value);
+                setActiveIndex(-1);
+              }}
+              onFocus={() => setIsFocused(true)}
+              onKeyDown={handleKeyDown}
+            />
+            <button className="search-submit" onClick={() => runSearch(localInput)}>SEARCH</button>
+          </div>
 
-            {/* Suggestions Dropdown */}
-            <div className={`suggestions${showSuggestions ? ' show' : ''}`}>
-              {filteredSuggestions.history.length > 0 && (
-                <>
-                  <div className="sug-group-label">Recent Searches</div>
-                  {filteredSuggestions.history.map((item, idx) => (
+          {/* Suggestions Dropdown */}
+          <div className={`suggestions${showSuggestions ? ' show' : ''}`}>
+            {filteredSuggestions.history.length > 0 && (
+              <>
+                <div className="sug-group-label">Recent Searches</div>
+                {filteredSuggestions.history.map((item, idx) => (
+                  <div
+                    key={`hist-${idx}`}
+                    className={`sug-row${activeIndex === idx ? ' sug-selected' : ''}`}
+                    onClick={() => handleSelect(item.query)}
+                    onMouseEnter={() => setActiveIndex(idx)}
+                  >
+                    <span className="sug-arrow">↻</span>
+                    <span className="sug-text">{item.label}</span>
+                    <span className={`sug-tag ${item.tagClass}`}>{item.tagText}</span>
+                  </div>
+                ))}
+              </>
+            )}
+            {filteredSuggestions.defaults.length > 0 && (
+              <>
+                <div className="sug-group-label">Suggestions</div>
+                {filteredSuggestions.defaults.map((item, idx) => {
+                  const globalIdx = filteredSuggestions.history.length + idx;
+                  return (
                     <div
-                      key={`hist-${idx}`}
-                      className={`sug-row${activeIndex === idx ? ' sug-selected' : ''}`}
+                      key={`def-${idx}`}
+                      className={`sug-row${activeIndex === globalIdx ? ' sug-selected' : ''}`}
                       onClick={() => handleSelect(item.query)}
-                      onMouseEnter={() => setActiveIndex(idx)}
+                      onMouseEnter={() => setActiveIndex(globalIdx)}
                     >
-                      <span className="sug-arrow">↻</span>
+                      <span className="sug-arrow">→</span>
                       <span className="sug-text">{item.label}</span>
                       <span className={`sug-tag ${item.tagClass}`}>{item.tagText}</span>
                     </div>
-                  ))}
-                </>
-              )}
-              {filteredSuggestions.defaults.length > 0 && (
-                <>
-                  <div className="sug-group-label">Suggestions</div>
-                  {filteredSuggestions.defaults.map((item, idx) => {
-                    const globalIdx = filteredSuggestions.history.length + idx;
-                    return (
-                      <div
-                        key={`def-${idx}`}
-                        className={`sug-row${activeIndex === globalIdx ? ' sug-selected' : ''}`}
-                        onClick={() => handleSelect(item.query)}
-                        onMouseEnter={() => setActiveIndex(globalIdx)}
-                      >
-                        <span className="sug-arrow">→</span>
-                        <span className="sug-text">{item.label}</span>
-                        <span className={`sug-tag ${item.tagClass}`}>{item.tagText}</span>
-                      </div>
-                    );
-                  })}
-                </>
-              )}
-            </div>
-          </div>
-          
-          {/* Quick Chips menggunakan runSearch */}
-          <div className="quick-chips">
-            {['Brand Identity', 'Motion', 'Systems'].map(chip => (
-              <button key={chip} className="qchip" onClick={() => runSearch(chip)}>
-                <span className="qchip-dot" style={{background: 'var(--accent)'}}></span>
-                {chip}
-              </button>
-            ))}
+                  );
+                })}
+              </>
+            )}
           </div>
         </div>
 
-        {/* Shortcuts menggunakan runSearch & openLabs */}
-        {/* <div className="home-shortcuts">
+        {/* Quick Chips menggunakan runSearch */}
+        <div className="quick-chips">
+          {['Brand Identity', 'Motion', 'Systems'].map(chip => (
+            <button key={chip} className="qchip" onClick={() => runSearch(chip)}>
+              <span className="qchip-dot" style={{ background: 'var(--accent)' }}></span>
+              {chip}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Shortcuts menggunakan runSearch & openLabs */}
+      {/* <div className="home-shortcuts">
           <div className="sc-item" onClick={() => runSearch('projects')}>
             <div className="sc-icon">◆</div>
             <div className="sc-label">Projects</div>
@@ -180,7 +194,7 @@ export default function HomeView({ onCounterReady }: { onCounterReady: boolean }
             <div className="sc-label">Labs</div>
           </div>
         </div> */}
-      </div>
     </div>
+    </div >
   );
 }
