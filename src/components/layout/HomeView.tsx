@@ -1,17 +1,15 @@
-"use client"
-import React, { useState, useRef, useEffect, useMemo } from 'react';
-import Image from 'next/image';
+'use client'
+import { useState, useRef, useEffect, useMemo } from 'react'
+import Image from 'next/image'
 import { useSearchStore } from '@/store/searchStore'
-import { useUIStore } from '@/store/uiStore'
 import { SUGGESTIONS } from '@/data'
 
 export default function HomeView({ onCounterReady }: { onCounterReady: boolean }) {
-  const [localInput, setLocalInput] = useState('');
-  const [isFocused, setIsFocused] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(-1);
+  const [localInput, setLocalInput] = useState('')
+  const [isFocused, setIsFocused] = useState(false)
+  const [activeIndex, setActiveIndex] = useState(-1)
   const { runSearch, history } = useSearchStore()
-  const openLabs = useUIStore((s) => s.openLabs)
-  const wrapRef = useRef<HTMLDivElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null)
 
   const filteredSuggestions = useMemo(() => {
     const term = localInput.trim().toLowerCase();
@@ -91,12 +89,6 @@ export default function HomeView({ onCounterReady }: { onCounterReady: boolean }
       </div>
 
       {/* --- CONTENT LAYER --- */}
-      {/* <div className="home-hero">
-        <div className="home-logo-row">
-          <span className="hl-word hl-w1">PRI</span>
-          <span className="hl-word hl-w2">YATNA</span>
-          <span className="hl-dot">.</span>
-        </div> */}
       <div className="home-hero">
         {/* Eyebrow Label */}
         <div className="explore-tag">

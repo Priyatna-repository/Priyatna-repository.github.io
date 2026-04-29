@@ -1,4 +1,4 @@
-import { ResultCard } from '@/types'
+import type { ResultCard } from '@/types'
 
 export const RESULT_CARDS: ResultCard[] = [
   {
@@ -15,6 +15,7 @@ export const RESULT_CARDS: ResultCard[] = [
       { label: 'Open Source', colorClass: 'rft-g' },
     ],
     date: 'Mar 2024',
+    categories: ['projects'],
   },
   {
     id: 'motion-studio',
@@ -29,6 +30,7 @@ export const RESULT_CARDS: ResultCard[] = [
       { label: 'Live', colorClass: 'rft-g' },
     ],
     date: 'Jun 2024',
+    categories: ['labs', 'motion'],
   },
   {
     id: 'gilded',
@@ -44,6 +46,7 @@ export const RESULT_CARDS: ResultCard[] = [
       { label: 'Shopify', colorClass: 'rft-r' },
     ],
     date: 'Jan 2024',
+    categories: ['projects'],
   },
   {
     id: 'type-foundry',
@@ -58,6 +61,7 @@ export const RESULT_CARDS: ResultCard[] = [
       { label: 'Variable Font', colorClass: 'rft-b' },
     ],
     date: 'Nov 2023',
+    categories: ['projects', 'branding'],
   },
   {
     id: 'color-oracle',
@@ -72,5 +76,6 @@ export const RESULT_CARDS: ResultCard[] = [
       { label: 'Beta', colorClass: 'rft-r' },
     ],
     date: 'Q2 2024',
+    categories: ['labs'],
   },
 ]
