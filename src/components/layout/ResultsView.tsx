@@ -50,29 +50,29 @@ export default function ResultsView() {
 
   return (
     <div id="results-view" className={`show rv-${theme}`}>
-      {/* Top bar */}
-      <div className="results-topbar">
-        <div className="rtb-logo" onClick={goHome} style={{ cursor: 'none' }}>
-          PRI<span>.</span>
-        </div>
-        <div className="search-bar-inline">
-          <input
-            className="sbi-input"
-            value={localInput}
-            onChange={(e) => setLocalInput(e.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && runSearch(localInput)}
-          />
-          <button className="sbi-btn" onClick={() => runSearch(localInput)}>↗</button>
-        </div>
-      </div>
 
-      {/* Tab bar */}
-      <div className="tabs-wrapper">
-        <div className="tabs-list-line">
+      {/* ── Sticky header: topbar + tabs ── */}
+      <div className="rv-sticky-header">
+        <div className="results-topbar">
+          <div className="rtb-logo" onClick={goHome} style={{ cursor: 'none' }}>
+            PRI<span>.</span>
+          </div>
+          <div className="search-bar-inline">
+            <input
+              className="sbi-input"
+              value={localInput}
+              onChange={(e) => setLocalInput(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && runSearch(localInput)}
+            />
+            <button className="sbi-btn" onClick={() => runSearch(localInput)}>↗</button>
+          </div>
+        </div>
+
+        <div className="results-tabs">
           {TABS.map((tab) => (
             <button
               key={tab.value}
-              className={`tabs-trigger-line${activeTab === tab.value ? ' active' : ''}`}
+              className={`rtab-btn${activeTab === tab.value ? ' active' : ''}`}
               onClick={() => setActiveTab(tab.value)}
             >
               {tab.label}
@@ -81,21 +81,18 @@ export default function ResultsView() {
         </div>
       </div>
 
-      {/* Results */}
-      <div className="results-layout">
-        <div className="results-main">
-          <div className="results-meta">
-            {filtered.length} result{filtered.length !== 1 ? 's' : ''} for &ldquo;{query}&rdquo;
-          </div>
-          {filtered.length > 0 ? (
-            filtered.map((card) => <ResultCardItem key={card.id} card={card} />)
-          ) : (
-            <div style={{ padding: '48px 0', color: 'var(--muted)', fontSize: 12, fontFamily: 'var(--f-mono)' }}>
-              NO RESULTS IN THIS CATEGORY
-            </div>
-          )}
+      {/* ── Results ── */}
+      <div className="results-content">
+        <div className="results-meta">
+          {filtered.length} result{filtered.length !== 1 ? 's' : ''} for &ldquo;{query}&rdquo;
         </div>
+        {filtered.length > 0 ? (
+          filtered.map((card) => <ResultCardItem key={card.id} card={card} />)
+        ) : (
+          <div className="results-empty">NO RESULTS IN THIS CATEGORY</div>
+        )}
       </div>
+
     </div>
   )
 }
