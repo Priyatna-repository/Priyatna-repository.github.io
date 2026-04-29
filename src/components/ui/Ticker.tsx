@@ -1,22 +1,43 @@
-"use client"
-import React from 'react';
+'use client'
+import { TICKER_ITEMS } from '@/data/ticker'
+import { useUIStore } from '@/store/uiStore'
 
-const Ticker = () => {
+export default function Ticker() {
+  const { theme, toggleTheme } = useUIStore()
+  const displayItems = [...TICKER_ITEMS, ...TICKER_ITEMS]
+
+  const pauseTrack = (wrap: EventTarget & HTMLDivElement) => {
+    const track = wrap.querySelector('.ticker-track') as HTMLElement | null
+    if (track) track.style.animationPlayState = 'paused'
+  }
+  const resumeTrack = (wrap: EventTarget & HTMLDivElement) => {
+    const track = wrap.querySelector('.ticker-track') as HTMLElement | null
+    if (track) track.style.animationPlayState = 'running'
+  }
+
   return (
     <div className="ticker-wrap">
-      <div className="ticker-track">
-        <div className="ticker-item"><span className="ticker-dot td-r"></span> PRIYATNA DESIGN SYSTEM v4.2</div>
-        <div className="ticker-item"><span className="ticker-dot td-b"></span> 247 PROJECTS · 34 COUNTRIES</div>
-        <div className="ticker-item"><span className="ticker-dot td-g"></span> ADDON LABS NOW OPEN · 6 TOOLS ACTIVE</div>
-        <div className="ticker-item"><span className="ticker-dot td-y"></span> MOTION STUDIO BETA → TRY IT NOW</div>
-        <div className="ticker-item"><span className="ticker-dot td-r"></span> AWWWARDS SITE OF THE DAY 2024</div>
-        <div className="ticker-item"><span className="ticker-dot td-b"></span> NEW: COLOR ORACLE AI PALETTE GEN</div>
-        {/* Duplikasi untuk infinite scroll */}
-        <div className="ticker-item"><span className="ticker-dot td-r"></span> PRIYATNA DESIGN SYSTEM v4.2</div>
-        <div className="ticker-item"><span className="ticker-dot td-b"></span> 247 PROJECTS · 34 COUNTRIES</div>
+      {/* Scrolling area — overflow is clipped on this inner div */}
+      <div
+        className="ticker-scroll"
+        onMouseEnter={(e) => pauseTrack(e.currentTarget.closest('.ticker-wrap') as EventTarget & HTMLDivElement)}
+        onMouseLeave={(e) => resumeTrack(e.currentTarget.closest('.ticker-wrap') as EventTarget & HTMLDivElement)}
+      >
+        <div className="ticker-track">
+          {displayItems.map((item, i) => (
+            <div key={`${item.text}-${i}`} className="ticker-item">
+              <span className={`ticker-dot ${item.dotClass}`} />
+              {item.text}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  );
-};
 
-export default Ticker;
+      {/* Theme toggle embedded in the ticker bar — z-index stays at ticker level (100),
+          never floats above the global loader (10000) */}
+      <button className="ticker-theme-btn" onClick={toggleTheme} aria-label="Toggle theme">
+        {theme === 'light' ? '☼' : '☾'}
+      </button>
+    </div>
+  )
+}

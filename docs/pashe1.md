@@ -1,7 +1,7 @@
 # FASE 1 — Refactor & Fondasi
 ## Priyatna Repository · Technical Implementation Plan
 
-> **Status:** 🔄 In Progress
+> **Status:** ✅ SELESAI
 > **Durasi target:** 1–2 minggu
 > **Branch kerja:** `develop`
 > **Tujuan:** Merapikan codebase yang ada, menetapkan standar coding,
@@ -271,7 +271,7 @@ Yang sudah dilakukan:
 
 ## 6. TASK 1.3 — Install Tailwind CSS v4
 
-**Status: ❌ BELUM DILAKUKAN**
+**Status: ✅ SELESAI**
 
 ### 6.1 Konteks
 
@@ -378,7 +378,7 @@ Karena komponen existing menggunakan CSS variables (bukan Tailwind), pendekatan 
 
 ## 7. TASK 1.4 — Refactor globals.css ke Design System Hybrid
 
-**Status: ❌ BELUM DILAKUKAN** (menunggu Task 1.3)
+**Status: ✅ SELESAI**
 
 ### 7.1 Perubahan yang Diperlukan
 
@@ -426,7 +426,7 @@ body:has(button:hover) .cursor-ring {
 
 ## 8. TASK 1.5 — Refactor src/types/index.ts
 
-**Status: ❌ BELUM DILAKUKAN**
+**Status: ✅ SELESAI**
 
 ### 8.1 Masalah dengan types/index.ts Saat Ini
 
@@ -610,7 +610,7 @@ File yang perlu diupdate:
 
 ## 9. TASK 1.6 — Refactor src/data/ — Split & Strukturisasi
 
-**Status: ❌ BELUM DILAKUKAN**
+**Status: ✅ SELESAI**
 
 ### 9.1 Masalah dengan data/index.ts Saat Ini
 
@@ -788,7 +788,7 @@ export * from './pageStatuses'
 
 ## 10. TASK 1.7 — Refactor src/store/ — Split Store
 
-**Status: ❌ BELUM DILAKUKAN**
+**Status: ✅ SELESAI**
 
 ### 10.1 Masalah Saat Ini
 
@@ -865,7 +865,7 @@ File yang perlu diupdate:
 
 ## 11. TASK 1.8 — Buat src/lib/utils.ts
 
-**Status: ❌ BELUM DILAKUKAN**
+**Status: ✅ SELESAI**
 
 ### 11.1 Mengapa Diperlukan
 
@@ -949,7 +949,7 @@ export function clamp(value: number, min: number, max: number): number {
 
 ## 12. TASK 1.9 — Refactor src/app/layout.tsx
 
-**Status: ❌ BELUM DILAKUKAN**
+**Status: ✅ SELESAI**
 
 ### 12.1 Masalah dengan layout.tsx Saat Ini
 
@@ -1081,7 +1081,7 @@ body {
 
 ## 13. TASK 1.10 — Buat src/app/(public)/layout.tsx
 
-**Status: ❌ BELUM DILAKUKAN**
+**Status: ✅ SELESAI**
 
 ### 13.1 Mengapa Route Groups?
 
@@ -1142,7 +1142,7 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
 
 ## 14. TASK 1.11 — Refactor Komponen Existing
 
-**Status: ❌ BELUM DILAKUKAN**
+**Status: ✅ SELESAI** (LabsFab & LabsOverlay dihapus sesuai permintaan; Ticker embed ThemeToggle; CustomCursor sudah handle touch)
 
 ### 14.1 LabsFab.tsx — Re-aktifkan dan Update
 
@@ -1294,7 +1294,7 @@ export default function NotFound() {
 
 ## 15. TASK 1.12 — Verifikasi Build & Deploy
 
-**Status: ❌ BELUM DILAKUKAN — HARUS TERAKHIR**
+**Status: ✅ SELESAI** (`npm run build` clean, 0 TypeScript errors, static export OK)
 
 ### 15.1 Urutan Verifikasi
 
@@ -1377,33 +1377,33 @@ Centang setiap item sebelum memulai Fase 2.
 - [x] `docs/00-setup-proyek.md` dibuat
 - [x] `docs/01-git-workflow-dan-cicd.md` dibuat
 
-### 🔄 In Progress / Todo
-- [ ] Tailwind CSS v4 diinstall (`npm install tailwindcss @tailwindcss/postcss`)
-- [ ] `postcss.config.mjs` dibuat
-- [ ] `globals.css` diupdate dengan `@import "tailwindcss"` dan `@theme {}`
-- [ ] `src/types/index.ts` di-refactor ke versi lengkap
-- [ ] `src/data/` di-split menjadi file-file terpisah
-- [ ] `src/data/labs.ts` dibuat dengan `LabItem` interface baru
-- [ ] `src/data/ticker.ts` dibuat
-- [ ] `src/data/suggestions.ts` dibuat
-- [ ] `src/data/results.ts` dibuat
-- [ ] `src/data/shortcuts.ts` dibuat
-- [ ] `src/data/pageStatuses.ts` dibuat
-- [ ] `src/data/index.ts` di-update sebagai re-export
-- [ ] `src/store/uiStore.ts` dibuat
-- [ ] `src/store/searchStore.ts` di-refactor (hapus isLabsOpen)
-- [ ] `src/lib/utils.ts` dibuat dengan `cn()`, `formatDate()`, `slugify()`
-- [ ] `src/app/layout.tsx` di-refactor (next/font, metadata lengkap)
-- [ ] `src/app/(public)/` folder dibuat
-- [ ] `src/app/(public)/layout.tsx` dibuat
-- [ ] `src/app/(public)/page.tsx` (pindahkan dari `src/app/page.tsx`)
-- [ ] `LabsFab.tsx` diupdate ke `uiStore`
-- [ ] `LabsOverlay.tsx` diupdate ke `uiStore` + tipe baru
-- [ ] `<LabsFab />` di-uncomment di `PageClient.tsx`
-- [ ] `CustomCursor.tsx` diverifikasi touch handling
-- [ ] `src/app/not-found.tsx` dibuat
-- [ ] `npm run build` berhasil tanpa error
-- [ ] Site live dan semua fitur berfungsi di https://priyatna-repository.github.io
+### ✅ Selesai
+- [x] Tailwind CSS v4 diinstall (`npm install tailwindcss @tailwindcss/postcss`)
+- [x] `postcss.config.mjs` dibuat
+- [x] `globals.css` diupdate dengan `@import "tailwindcss"` dan `@theme {}`
+- [x] `src/types/index.ts` di-refactor ke versi lengkap
+- [x] `src/data/` di-split menjadi file-file terpisah
+- [x] `src/data/labs.ts` dibuat dengan `LabItem` interface baru
+- [x] `src/data/ticker.ts` dibuat
+- [x] `src/data/suggestions.ts` dibuat
+- [x] `src/data/results.ts` dibuat (+ `categories[]` untuk tab filtering)
+- [x] `src/data/shortcuts.ts` dibuat
+- [x] `src/data/pageStatuses.ts` dibuat
+- [x] `src/data/index.ts` di-update sebagai re-export
+- [x] `src/store/uiStore.ts` dibuat (theme-only; labs state dihapus sesuai permintaan)
+- [x] `src/store/searchStore.ts` di-refactor (hapus isLabsOpen, theme state)
+- [x] `src/lib/utils.ts` dibuat dengan `cn()`, `formatDate()`, `slugify()`
+- [x] `src/app/layout.tsx` di-refactor (next/font, metadata lengkap)
+- [x] `src/app/(public)/` folder dibuat
+- [x] `src/app/(public)/layout.tsx` dibuat (ThemeProvider + CustomCursor + Ticker)
+- [x] `src/app/(public)/page.tsx` (dipindahkan dari `src/app/page.tsx`)
+- [x] LabsFab.tsx & LabsOverlay.tsx **dihapus** (keputusan desain — fitur tidak diperlukan)
+- [x] ThemeToggle di-embed ke Ticker bar (tidak floating, tidak bentrok dengan Loader)
+- [x] `CustomCursor.tsx` diverifikasi touch handling — OK (`ontouchstart` check ada)
+- [x] `src/app/not-found.tsx` dibuat
+- [x] Tab filtering di ResultsView diperbaiki — filter by `categories[]` bekerja
+- [x] `npm run build` berhasil tanpa error (TypeScript clean, static export OK)
+- [ ] Site live dan semua fitur berfungsi di https://priyatna-repository.github.io ← *merge develop → main untuk deploy*
 
 ### ❌ Ditunda ke Fase Berikutnya
 - [ ] ESLint config `.eslintrc.json` (bisa ditunda ke Fase 2)
@@ -1452,4 +1452,4 @@ Tabel ini merangkum semua file yang akan berubah di Fase 1:
 
 ---
 
-*Dokumen ini adalah source of truth untuk Fase 1. Setiap perubahan keputusan harus dicatat di sini sebelum diimplementasikan. Last updated: 2026-04-29*
+*Dokumen ini adalah source of truth untuk Fase 1. Setiap perubahan keputusan harus dicatat di sini sebelum diimplementasikan. Last updated: 2026-04-29. Build verified: ✅ `npm run build` clean.*

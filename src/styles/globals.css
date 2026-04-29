@@ -343,7 +343,35 @@ body::after {
     background: var(--ink);
     border-bottom: 1px solid var(--border);
     height: 30px;
+    display: flex;
+    align-items: stretch;
+    /* overflow moved to .ticker-scroll so the theme btn stays visible */
+}
+
+.ticker-scroll {
+    flex: 1;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.ticker-theme-btn {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    background: none;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--muted2, #b0a898);
+    font-size: 14px;
+    cursor: none;
+    transition: color 0.2s, background 0.2s;
+}
+
+.ticker-theme-btn:hover {
+    color: var(--paper);
+    background: rgba(255, 255, 255, 0.06);
 }
 
 .ticker-track {
@@ -508,6 +536,50 @@ body::after {
     }
 }
 
+/* Container untuk Explore The Archive */
+.explore-tag {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.et-word {
+  font-family: var(--f-mono); /* Atau var(--f-display) jika ingin lebih bold */
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-block;
+  
+  /* Animasi muncul per kata */
+  animation: slideUp 0.6s var(--transition) both;
+}
+
+.et-italic {
+  font-family: var(--f-serif); /* Font DM Serif Display */
+  text-transform: lowercase;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: -2px; /* Adjust alignment */
+}
+
+/* Delay Staggering */
+.et-word:nth-child(1) { animation-delay: 0.2s; }
+.et-word:nth-child(2) { animation-delay: 0.3s; }
+.et-word:nth-child(3) { animation-delay: 0.4s; }
+
+/* Pastikan hl-word logo mulai setelah eyebrow selesai */
+.hl-word {
+  animation-delay: 0.6s !important;
+}
+.hl-dot {
+  animation-delay: 0.8s !important;
+}
 
 .home-sub-row {
     display: flex;
@@ -2444,3 +2516,8 @@ body:has(button:hover) .cursor-ring {
 
 /* ─── FOCUS VISIBLE ──────────────────────────────────────────────────────── */
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+@keyframes tickerRun {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); } /* Karena kita duplikasi data 2x */
+}

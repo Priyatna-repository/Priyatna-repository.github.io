@@ -63,6 +63,7 @@ export interface ResultCard {
   desc: string
   tags: ResultTag[]
   date: string
+  categories: string[]
 }
 
 // ─── Content ─────────────────────────────────────────────────────────────────
