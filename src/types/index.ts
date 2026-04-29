@@ -91,9 +91,11 @@ export interface Project {
 // ─── Page config ──────────────────────────────────────────────────────────────
 export interface PageStatusConfig {
   status: PageStatus
-  label: string
-  description?: string
+  message?: string
+  estimate?: string
 }
+
+export type SitePageStatuses = Record<string, PageStatusConfig>
 
 // ─── People Also Ask ──────────────────────────────────────────────────────────
 export interface PAA {

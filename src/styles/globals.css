@@ -1,7 +1,5 @@
-/* Google Fonts — CDN import must precede all other rules */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;0,700;1,400&family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&display=swap');
-
 /* ─── TAILWIND CSS v4 ─────────────────────────────────────────────────────── */
+/* Fonts loaded via next/font (self-hosted) in src/app/layout.tsx             */
 @import "tailwindcss";
 
 /* ─── DESIGN TOKENS ────────────────────────────────────────────────────────── */

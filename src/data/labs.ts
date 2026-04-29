@@ -1,4 +1,4 @@
-import { LabItem } from '@/types'
+import type { LabItem } from '@/types'
 
 export const LAB_ITEMS: LabItem[] = [
   {
@@ -87,3 +87,18 @@ export const LAB_ITEMS: LabItem[] = [
     order: 6,
   },
 ]
+
+// Helper functions — interface matches the future API shape (Phase 3)
+export function getAllLabs(): LabItem[] {
+  return [...LAB_ITEMS].sort((a, b) => a.order - b.order)
+}
+
+export function getActiveLabs(): LabItem[] {
+  return LAB_ITEMS.filter((l) => l.status === 'live' || l.status === 'beta').sort(
+    (a, b) => a.order - b.order
+  )
+}
+
+export function getLabBySlug(slug: string): LabItem | undefined {
+  return LAB_ITEMS.find((l) => l.slug === slug)
+}
