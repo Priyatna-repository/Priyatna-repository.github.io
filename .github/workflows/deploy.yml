@@ -1,0 +1,115 @@
+# ─── GitHub Actions: Auto Deploy ke GitHub Pages ──────────────────────────────
+#
+# Workflow ini otomatis berjalan setiap kali ada push ke branch `main`.
+# Proses: Build Next.js static export → deploy ke branch `gh-pages`
+#
+# Setup awal (sekali saja, lakukan manual di GitHub):
+#   1. Buka repository di GitHub → Settings → Pages
+#   2. Source: "Deploy from a branch"
+#   3. Branch: "gh-pages" → folder: "/ (root)"
+#   4. Save
+#
+# Setelah setup:
+#   Setiap `git push origin main` → workflow ini jalan → site ter-deploy otomatis
+#
+# Lihat detail lengkap: docs/01-git-workflow-dan-cicd.md
+# ──────────────────────────────────────────────────────────────────────────────
+
+name: Deploy to GitHub Pages
+
+on:
+  # Trigger saat ada push ke branch main (production)
+  push:
+    branches:
+      - main
+
+  # Boleh juga trigger manual dari GitHub Actions tab
+  workflow_dispatch:
+
+# Permission yang dibutuhkan workflow ini
+permissions:
+  contents: write  # Untuk push ke branch gh-pages
+
+jobs:
+  # ─── Job 1: Build ──────────────────────────────────────────────────────────
+  build-and-deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout kode dari branch main
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history untuk git info
+
+      # Step 2: Setup Node.js dengan versi yang spesifik
+      # Gunakan Node.js LTS (20) untuk stabilitas
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'  # Cache npm dependencies untuk build lebih cepat
+
+      # Step 3: Install semua dependencies dari package-lock.json
+      # `npm ci` lebih strict dari `npm install` — cocok untuk CI/CD
+      - name: Install dependencies
+        run: npm ci
+
+      # Step 4: Build Next.js static export
+      # Menghasilkan folder `out/` dengan semua HTML/CSS/JS statis
+      - name: Build static export
+        run: npm run build
+        env:
+          # Jika ada environment variables yang dibutuhkan saat build, tambahkan di sini
+          # Contoh (uncomment jika diperlukan di masa depan):
+          # NEXT_PUBLIC_SITE_URL: 'https://priyatna-repository.github.io'
+          NODE_ENV: production
+
+      # Step 5: Buat file .nojekyll di dalam folder out/
+      # GitHub Pages secara default menjalankan Jekyll processor.
+      # File .nojekyll memberi tahu GitHub Pages untuk melewati Jekyll
+      # dan langsung serve file statis. WAJIB untuk Next.js!
+      - name: Add .nojekyll file
+        run: touch ./out/.nojekyll
+
+      # Step 6: Deploy folder out/ ke branch gh-pages
+      # peaceiris/actions-gh-pages adalah action populer untuk ini
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out          # Folder hasil build Next.js
+          publish_branch: gh-pages   # Branch yang digunakan GitHub Pages
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'deploy: ${{ github.event.head_commit.message }}'
+          # Aktifkan jika ingin push force (hapus history gh-pages):
+          # force_orphan: true
+
+# ─── CATATAN UNTUK MIGRASI KE VPS (MASA DEPAN) ───────────────────────────────
+#
+# Ketika siap pindah ke VPS dengan Node.js server:
+#
+# 1. Hapus workflow ini
+# 2. Buat workflow baru: .github/workflows/deploy-vps.yml
+#    Isinya: SSH ke VPS → git pull → npm ci → npm run build → pm2 restart
+#
+# Contoh workflow VPS (simpan untuk referensi):
+# ---
+# - name: Deploy to VPS
+#   uses: appleboy/ssh-action@v1
+#   with:
+#     host: ${{ secrets.VPS_HOST }}
+#     username: ${{ secrets.VPS_USER }}
+#     key: ${{ secrets.VPS_SSH_KEY }}
+#     script: |
+#       cd /var/www/priyatna
+#       git pull origin main
+#       npm ci --production
+#       npm run build
+#       pm2 restart priyatna-app
+# ---
+#
+# Lihat detail: docs/pashe3.md (Fase 3 — Backend & VPS Infrastructure)
+# ──────────────────────────────────────────────────────────────────────────────

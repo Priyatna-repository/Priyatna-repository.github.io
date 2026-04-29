@@ -1,0 +1,46 @@
+# ─── Dependencies ─────────────────────────────────────────────────
+node_modules/
+
+# ─── Next.js ──────────────────────────────────────────────────────
+.next/
+out/
+
+# ─── TypeScript build cache ────────────────────────────────────────
+tsconfig.tsbuildinfo
+
+# ─── Environment variables ─────────────────────────────────────────
+# JANGAN commit file .env ke git!
+# Untuk development lokal, buat .env.local (sudah di-ignore di sini)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ─── Vercel (jika migrate ke Vercel di masa depan) ─────────────────
+.vercel
+
+# ─── OS ───────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─── IDE ──────────────────────────────────────────────────────────
+.vscode/
+.idea/
+
+# ─── Logs ─────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ─── Coverage ─────────────────────────────────────────────────────
+coverage/
+.nyc_output/
+
+# ─── Misc ─────────────────────────────────────────────────────────
+*.tsbuildinfo
+.eslintcache
+
+# ─── Local-only files (tidak perlu di GitHub) ─────────────────────
+CLAUDE.md
