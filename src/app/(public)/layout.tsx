@@ -1,5 +1,6 @@
 import CustomCursor from '@/components/layout/CustomCursor'
 import Ticker from '@/components/ui/Ticker'
+import BackToDashboard from '@/components/ui/BackToDashboard'
 import ThemeProvider from '@/providers/ThemeProvider'
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {

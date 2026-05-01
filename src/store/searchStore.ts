@@ -12,6 +12,7 @@ interface SearchStore {
   goHome: () => void
   setHasHydrated: (state: boolean) => void
   addToHistory: (q: string) => void
+  removeFromHistory: (q: string) => void
   clearHistory: () => void
 }
 
@@ -51,6 +52,9 @@ export const useSearchStore = create<SearchStore>()(
           const newHistory = [trimmed, ...state.history.filter((h) => h !== trimmed)].slice(0, 10)
           return { history: newHistory }
         }),
+
+      removeFromHistory: (q) =>
+        set((state) => ({ history: state.history.filter((h) => h !== q) })),
 
       clearHistory: () => set({ history: [] }),
     }),

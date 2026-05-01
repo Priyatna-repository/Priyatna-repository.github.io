@@ -1,4 +1,5 @@
-import type { ResultCard } from '@/types'
+import type { ResultCard, ResultTab, FooterNavColumn } from '@/types'
+import type { SearchResultType } from '@/lib/search'
 
 export const RESULT_CARDS: ResultCard[] = [
   {
@@ -77,5 +78,51 @@ export const RESULT_CARDS: ResultCard[] = [
     ],
     date: 'Q2 2024',
     categories: ['labs'],
+  },
+]
+
+// ─── Result card display config ───────────────────────────────────────────────
+export const TYPE_LABEL: Record<SearchResultType, string> = {
+  blog: 'BLOG',
+  project: 'SHOWCASE',
+  lab: 'LAB',
+}
+
+export const TYPE_COLOR: Record<SearchResultType, string> = {
+  blog: 'rci-r',
+  project: 'rci-b',
+  lab: 'rci-g',
+}
+
+export const TAG_COLOR: Record<SearchResultType, string> = {
+  blog: 'rft-r',
+  project: 'rft-b',
+  lab: 'rft-g',
+}
+
+// ─── Filter tabs ──────────────────────────────────────────────────────────────
+export const RESULT_TABS: ResultTab[] = [
+  { value: 'all', label: 'ALL' },
+  { value: 'blog', label: 'BLOG' },
+  { value: 'project', label: 'PROJECTS' },
+  { value: 'lab', label: 'LABS' },
+]
+
+// ─── Results footer navigation ────────────────────────────────────────────────
+export const FOOTER_NAV: FooterNavColumn[] = [
+  {
+    label: 'EXPLORE',
+    links: [
+      { name: 'Blog', href: '/blog', external: false },
+      { name: 'Showcase', href: '/showcase', external: false },
+      { name: 'Labs', href: '/labs', external: false },
+    ],
+  },
+  {
+    label: 'CONNECT',
+    links: [
+      { name: 'LinkedIn', href: 'https://linkedin.com/in/priyatna', external: true },
+      { name: 'GitHub', href: 'https://github.com/Priyatna-repository', external: true },
+    ],
   },
 ]

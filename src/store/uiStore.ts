@@ -8,6 +8,9 @@ interface UIStore {
   isLoaderDone: boolean
   setLoaderDone: () => void
   resetLoader: () => void
+  isLoggedIn: boolean
+  login: () => void
+  logout: () => void
 }
 
 export const useUIStore = create<UIStore>()(
@@ -18,11 +21,14 @@ export const useUIStore = create<UIStore>()(
       isLoaderDone: false,
       setLoaderDone: () => set({ isLoaderDone: true }),
       resetLoader: () => set({ isLoaderDone: false }),
+      isLoggedIn: false,
+      login: () => set({ isLoggedIn: true }),
+      logout: () => set({ isLoggedIn: false }),
     }),
     {
       name: 'priyatna-ui',
       storage: createJSONStorage(() => localStorage),
-      partialize: (state) => ({ theme: state.theme }),
+      partialize: (state) => ({ theme: state.theme, isLoggedIn: state.isLoggedIn }),
     }
   )
 )

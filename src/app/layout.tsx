@@ -32,7 +32,7 @@ const SITE_URL = 'https://priyatna-repository.github.io'
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'PRIYATNA — Design Search Engine',
+    default: 'PRIYATNA — Welcome to my world',
     template: '%s · PRIYATNA',
   },
   description:
@@ -45,13 +45,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: SITE_URL,
     siteName: 'PRIYATNA',
-    title: 'PRIYATNA — Design Search Engine',
+    title: 'PRIYATNA — Welcome to my world',
     description: 'Design Search Engine — a curated portfolio of brand identity, motion, and design systems.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'PRIYATNA Design Search Engine' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'PRIYATNA Welcome to my world' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PRIYATNA — Design Search Engine',
+    title: 'PRIYATNA — Welcome to my world',
     description: 'Design Search Engine — a curated portfolio of brand identity, motion, and design systems.',
     images: ['/og-image.png'],
   },

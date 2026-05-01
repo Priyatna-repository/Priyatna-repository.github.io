@@ -118,3 +118,20 @@ export interface QuickChip {
   query: string
   color: string
 }
+
+// ─── Results view ─────────────────────────────────────────────────────────────
+export interface ResultTab {
+  value: string
+  label: string
+}
+
+export interface FooterNavLink {
+  name: string
+  href: string
+  external: boolean
+}
+
+export interface FooterNavColumn {
+  label: string
+  links: FooterNavLink[]
+}

@@ -1,5 +1,5 @@
 "use client"
-import '@/styles/loader.css'
+import '@/styles/components/loader.css'
 import React, { useEffect, useState } from 'react';
 
 interface LoaderProps {
